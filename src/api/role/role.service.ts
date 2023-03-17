@@ -42,7 +42,7 @@ export class RoleService {
   async update(ID: string, updateRoleDto: UpdateRoleDto): Promise<Roles> {
     const role = await this.findOne(ID);
     if (!role) {
-      throw new NotFoundException('Role not found');
+      throw new NotFoundException('Role not found!');
     }
     if (updateRoleDto.Name) {
       role.Name = updateRoleDto.Name;
